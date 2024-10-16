@@ -1,0 +1,19 @@
+<h1>Utilisateur</h1>
+<div>
+    <div>Prénom : {{ipponStore.user.firstName()}}</div>
+    <div>Nom : {{ipponStore.user.lastName()}}</div>
+    <div>Prénom / Nom : {{ipponStore.name()}}</div>
+</div>
+
+<h1>Adresse</h1>
+@if(ipponStore.user.address && ipponStore.user.address(); as userAddress) {
+<div>
+    <div>Adresse1 : {{userAddress.address1}}</div>
+    <div>Adresse2 : {{userAddress.address2}}</div>
+    <div>Code Postal : {{userAddress.zip}}</div>
+    <div>Ville : {{userAddress.city}}</div>
+    <div>Pays : {{userAddress.country}}</div>
+</div>
+} @else {
+    <p>Aucune adresse</p>
+}
